@@ -15,7 +15,8 @@ This application manages song catalogues, allowing users to create and interact 
   - Length of the song
 
 - **Artist Class:** Represents an artist or band, containing:
-  - Name of the artist (band or solo performer)
+  - Name of the artist
+  - Whether they are a band or solo performer
   - List of songs by the artist
 
 - **Playlist Class:** Handles the collection of songs and provides the following functionalities:
