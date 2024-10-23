@@ -1,26 +1,48 @@
 import java.util.ArrayList;
-import java.io.File;
-import java.io.PrintWriter;
 
 public class Song {
-    public String title;           // Song title
-    public String artist;          // Artist of the song
-    public double duration;        // Song duration in minutes
-    public ArrayList<Song> similarSongs; // List to store similar songs
+    public String title;
+    public Artist artist; // Artist object from the Artist class 
+    public String album;
+    public int lengthInSeconds;
 
     // Constructor
-    public Song(String title, String artist, double duration) {
+    public Song(String title, Artist artist, String album, int lengthInSeconds) {
         this.title = title;
         this.artist = artist;
-        this.duration = duration;
-        this.similarSongs = new ArrayList<>();
+        this.album = (album == null || album.isEmpty()) ? "Single" : album; // Default to "Single" if album is null or empty
+        this.lengthInSeconds = lengthInSeconds;
+        
+        // Add this song's title to the artist's song list
+        this.artist.addSong(this.title);
     }
 
-    // Adds a similar song if it's not already in the list
-    public void addSimilarSong(Song song) {
-        // Condition to check if song is not null and not already in the list
-        if (song != null && !similarSongs.contains(song)) {
-            similarSongs.add(song);
+    // Method to display song details
+    public void showDetails() {
+        int minutes = lengthInSeconds / 60;
+        int seconds = lengthInSeconds % 60;
+
+        // Create an ArrayList to store song details
+        ArrayList<String> details = new ArrayList<>();
+        details.add("Title: " + title);
+        details.add("Artist: " + artist.getName());
+        details.add("Album: " + album);
+        details.add(String.format("Length: %d:%02d", minutes, seconds)); // Formatting length in minutes:seconds
+
+        // Display the song details
+        for (String detail : details) {
+            System.out.println(detail);
         }
     }
-// i have not updated it, just did the basics
+
+    // Method to simulate playing the song
+    public void play() {
+        System.out.println("Playing: " + title + " by " + artist.getName());
+    }
+
+    //  toString method to return song details
+    public String toString() {
+        return String.format("Title: %s, Artist: %s, Album: %s, Length: %d seconds",
+                title, artist.getName(), album, lengthInSeconds);
+    }
+}
