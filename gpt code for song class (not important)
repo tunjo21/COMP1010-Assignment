@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class Song {
+    public String title;  // Song title
+    public String artist; // Artist of the song
+    public double duration; // Song duration in minutes
+    public ArrayList<Song> similarSongs; // List to store similar songs
+
+    // Constructor
+    public Song(String title, String artist, double duration) {
+        this.title = title;
+        this.artist = artist;
+        this.duration = duration;
+        this.similarSongs = new ArrayList<>();
+    }
+
+    // Adds a similar song if it's not already in the list
+    public void addSimilarSong(Song song) {
+        if (song != null && !similarSongs.contains(song)) {
+            similarSongs.add(song);
+            System.out.println(song.title + " added as a similar song to " + this.title);
+        }
+    }
+
+    // Displays song details
+    public void showDetails() {
+        System.out.println("Title: " + title);
+        System.out.println("Artist: " + artist);
+        System.out.printf("Duration: %.2f minutes\n", duration);
+
+        // Display similar songs if any
+        if (!similarSongs.isEmpty()) {
+            System.out.println("Similar Songs:");
+            for (Song similarSong : similarSongs) {
+                System.out.println(" - " + similarSong.title + " by " + similarSong.artist);
+            }
+        } else {
+            System.out.println("No similar songs available.");
+        }
+    }
+
+    // Method to simulate playing a song
+    public void play() {
+        System.out.println("Playing: " + title + " by " + artist);
+    }
+
+    // Saves song details to a file
+    public void saveToFile(String filename) {
+        try (PrintWriter writer = new PrintWriter(new File(filename))) {
+            writer.println("Title: " + title);
+            writer.println("Artist: " + artist);
+            writer.printf("Duration: %.2f minutes\n", duration);
+
+            // Save similar songs if any
+            if (!similarSongs.isEmpty()) {
+                writer.println("Similar Songs:");
+                for (Song similarSong : similarSongs) {
+                    writer.println(" - " + similarSong.title + " by " + similarSong.artist);
+                }
+            } else {
+                writer.println("No similar songs available.");
+            }
+
+            System.out.println("Song details saved to " + filename);
+        } catch (IOException e) {
+            System.out.println("Error saving song to file: " + e.getMessage());
+        }
+    }
+
+    // Override toString to display basic song information
+    @Override
+    public String toString() {
+        return String.format("Title: %s, Artist: %s, Duration: %.2f minutes", title, artist, duration);
+    }
+}
