@@ -20,20 +20,15 @@ public class Artist {
         Songs.add(song);
     }
 
-    public List<String> getSongs() {
-        return Songs;
-    }
-
     public boolean isSolo() {
         return isSoloArtist;
     }
 
-
-    // display Artist details
     public void displayDetails() {
         System.out.println("Artist Name: " + name);
         System.out.println("Artist Type: " + (isSoloArtist ? "Solo Artist" : "Band"));
-        System.out.println("Songs: " + String.join(", ", Songs));
+        System.out.println("Songs: ");
+        System.out.println(Songs);
     }
 
 }
