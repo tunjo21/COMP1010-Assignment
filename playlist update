@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+public class Playlist {
+    private int number;  // Playlist identifier
+    private ArrayList<Song> songs;  // List to store Song objects
+    private int currentSongIndex;  // Track the currently playing song
+
+    // Constructor
+    public Playlist(int number) {
+        this.number = number;
+        this.songs = new ArrayList<>();
+        this.currentSongIndex = 0;
+    }
+
+    // Method to add a Song object to the playlist
+    public void addSong(Song song) {
+        songs.add(song);
+        System.out.println(song.getTitle() + " added to playlist " + number);
+    }
+
+    // Display all songs in the playlist
+    public void displayPlaylist() {
+        System.out.println("Playlist " + number + " contains the following songs:");
+        for (int i = 0; i < songs.size(); i++) {
+            System.out.println((i + 1) + ". " + songs.get(i).getTitle() + " by " + songs.get(i).getArtist().getName());
+        }
+        System.out.println();
+    }
