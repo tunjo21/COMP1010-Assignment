@@ -1,0 +1,17 @@
+public class PlaylistTest {
+    public static void main(String[] args) {
+        Playlist playlist1 = new Playlist(1);
+
+        playlist1.addSong("Say");
+        playlist1.addSong("Starboy");
+        playlist1.addSong("Daylight");
+        playlist1.addSong("We cant be friends (wait for your love)");
+
+        playlist1.displayPlaylist();
+
+        System.out.print("playlist playing is ");
+        System.out.println(playlist1.number);
+
+
+    }
+}
