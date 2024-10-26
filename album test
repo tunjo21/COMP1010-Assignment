@@ -1,0 +1,97 @@
+import java.util.ArrayList;
+
+public class AlbumTest {
+    
+    public static void main(String[] args) throws Exception {
+        testSoloList();
+        testBandList();
+        testGetSongsByArtist();
+    }
+
+    public static void testSoloList() {
+        System.out.println("Running testSoloList...");
+
+        // Create sample artists
+        
+        Artist artist2 = new Artist("Keshi", true);
+        Artist artist5 = new Artist("One Direction", false);
+        Artist artist7 = new Artist("The Weeknd", true);
+
+        // Create sample songs
+        ArrayList<Song> songs = new ArrayList<>();
+        
+        songs.add(new Song("Say", artist2, "REQUIEM", 3 * 60 + 2));
+        songs.add(new Song("Night Changes", artist5, "Four", 3 * 60 + 52));
+        songs.add(new Song("Blinding Lights", artist7, "After Hours", 4 * 60 + 23));
+    
+       
+        
+        // Create album and add solo songs
+        Album soloAlbum = new Album("Solo Artists Album", null);
+        soloAlbum.SoloList(songs);
+
+        // Verify the result
+        if (soloAlbum.AlbumSongs.size() == 3 && 
+            soloAlbum.AlbumSongs.contains(songs.get(1)) && 
+            soloAlbum.AlbumSongs.contains(songs.get(2)) && 
+            soloAlbum.AlbumSongs.contains(songs.get(3))) {
+            System.out.println("testSoloList passed!");
+        } else {
+            System.out.println("testSoloList failed!");
+        }
+    }
+
+    public static void testBandList() {
+        System.out.println("Running testBandList...");
+
+        // Create sample artists
+        Artist artist1 = new Artist("Daft Punk and The Weeknd", true);
+        Artist artist5 = new Artist("One Direction", false);
+
+        // Create sample songs
+        ArrayList<Song> songs = new ArrayList<>();
+        songs.add(new Song("Starboy", artist1, "Starboy", 3 * 60 + 50));
+        songs.add(new Song("Night Changes", artist5, "Four", 3 * 60 + 52));
+        songs.add(new Song("What Makes You Beautiful", artist5, "Up All Night", 3 * 60 + 27));
+        
+        // Create album and add band songs
+        Album bandAlbum = new Album("Band Artists Album", null);
+        bandAlbum.BandList(songs);
+
+        // Verify the result
+        if (bandAlbum.AlbumSongs.size() == 2 && 
+            bandAlbum.AlbumSongs.contains(songs.get(1)) && 
+            bandAlbum.AlbumSongs.contains(songs.get(2))) {
+            System.out.println("testBandList passed!");
+        } else {
+            System.out.println("testBandList failed!");
+        }
+    }
+
+    public static void testGetSongsByArtist() {
+        System.out.println("Running testGetSongsByArtist...");
+
+        // Create sample artists
+        Artist artist5 = new Artist("One Direction", false);
+        Artist artist7 = new Artist("The Weeknd", true);
+
+        // Create sample songs
+        ArrayList<Song> songs = new ArrayList<>();
+        songs.add(new Song("What Makes You Beautiful", artist5, "Up All Night", 3 * 60 + 27));
+        songs.add(new Song("Blinding Lights", artist7, "After Hours", 4 * 60 + 23));
+        songs.add(new Song("Die For You", artist7, "Starboy", 3 * 60 + 14));
+        
+        // Create album and get songs by artist
+        Album specificArtistAlbum = new Album("The Weeknd Album", artist7);
+        specificArtistAlbum.GetSongsByArtist(songs, "The Weeknd");
+
+        // Verify the result
+        if (specificArtistAlbum.AlbumSongs.size() == 2 && 
+            specificArtistAlbum.AlbumSongs.contains(songs.get(1)) && 
+            specificArtistAlbum.AlbumSongs.contains(songs.get(2))) {
+            System.out.println("testGetSongsByArtist passed!");
+        } else {
+            System.out.println("testGetSongsByArtist failed!");
+        }
+    }
+}
