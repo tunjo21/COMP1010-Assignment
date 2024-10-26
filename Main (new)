@@ -1,0 +1,101 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int count = 0;
+        Scanner scanner = new Scanner(System.in);;
+        System.out.print("Enter what playlist you want to play: ");
+        int number = scanner.nextInt();
+        System.out.println();
+
+
+        while (number > 3) {
+            System.out.println("Searching...");
+            System.out.println();
+            System.out.println("Playlist not found.");
+            System.out.println();
+            System.out.print("Enter what playlist you want to play: ");
+            number = scanner.nextInt();
+            System.out.println();
+        }
+
+        if (number == 1) {
+            System.out.println("Playing Playlist " + number + "...");
+        } 
+        if (number == 2) {
+            System.out.println("Playing Playlist " + number + "...");
+        } 
+        if (number == 3) {
+            System.out.println("Playing Playlist " + number + "...");
+        }
+
+        System.out.print("Song playing: ");
+        System.out.println(); // input first song name here;
+        System.out.println("press 0 to pause");
+        System.out.println("press 1 for prev");
+        System.out.println("press 2 for next");
+        System.out.println("press 3 to shuffle");
+        System.out.println("press 4 to exit");
+        System.out.println();
+        System.out.print("Enter what you want to do: ");
+        number = scanner.nextInt();
+        System.out.println();
+
+        while (number > 4) {
+            System.out.println("Invalid input, try again.");
+            System.out.println();
+            System.out.print("Enter what you want to do: ");
+            number = scanner.nextInt();
+            System.out.println();
+        }
+
+        while (number == 0) {
+            if (count == 0) {
+                System.out.println("Pausing song...");
+                System.out.println();
+                System.out.println("Song paused");
+                System.out.println();
+                System.out.println("press 0 to play");
+                System.out.println("press 1 for prev");
+                System.out.println("press 2 for next");
+                System.out.println("press 3 to shuffle");
+                System.out.println("press 4 to exit");
+                System.out.print("Enter what you want to do: ");
+                number = scanner.nextInt();
+                System.out.println();
+                count++;
+            } 
+
+            if (count == 1) {
+                System.out.println("Resuming song...");
+                System.out.print("Song playing: ");
+                System.out.println(); // song name
+                System.out.println();
+                System.out.println("press 0 to play");
+                System.out.println("press 1 for prev");
+                System.out.println("press 2 for next");
+                System.out.println("press 3 to shuffle");
+                System.out.println("press 4 to exit");
+                System.out.print("Enter what you want to do: ");
+                number = scanner.nextInt();
+                System.out.println();
+                count = 0;
+            }
+        }
+
+
+        if (number == 1) {
+            System.out.println("Playing previous song...");
+            System.out.println()
+        } 
+        if (number == 2) {
+            System.out.println("Playing next song...");
+        } 
+        if (number == 3) {
+            System.out.println("Playing Playlist " + number + "...");
+        }
+
+        scanner.close();
+    }
+}
