@@ -1,0 +1,16 @@
+public void shuffle(){
+        int[] array = {1, 2, 3, 4, 5};
+        int n = array.length;
+
+        // Repeat the shuffling process a number of times
+        for (int i = 0; i < n * 2; i++) {
+            // Choose two random indices
+            songIndex = (int) (Math.random() * n);
+            int help = (int) (Math.random() * n);
+            
+            // Swap the elements at these indices
+            int temp = array[songIndex];
+            array[songIndex] = array[help];
+            array[help] = temp;
+        //songIndex = (int) (Math.random() * album.AlbumSongs.size());        
+    }
