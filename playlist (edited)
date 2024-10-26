@@ -8,12 +8,12 @@ public class Playlist {
     }
 
     public void play() {
-        Song song = album.AlbumSongs.get(0);
+        Song song = album.AlbumSongs.get(songIndex);
         song.play();
     }
 
     public void next(){
-        if(songIndex == album.AlbumSongs.size() ){
+        if(songIndex == album.AlbumSongs.size()-1 ){
             songIndex = 0;
         }
         else{
@@ -31,7 +31,20 @@ public class Playlist {
     }
 
     public void shuffle(){
+        // String[] array = album.AlbumSongs};
+        // int n = album.AlbumSongs.size();
+
+        // Repeat the shuffling process a number of times
+        // for (int i = 0; i < n; i++) {
+        //     // Choose two random indices
+        //     songIndex = (int) (Math.random() * n);
+        //     int help = (int) (Math.random() * n);
+            
+        //     // Swap the elements at these indices
+        //     int temp = array[songIndex];
+        //     album.songs[songIndex] = array[help];
+        //     array[help] = temp;
         songIndex = (int) (Math.random() * album.AlbumSongs.size());        
     }
-
 }
+
