@@ -1,0 +1,37 @@
+public class Playlist {
+    public Album album;
+    private int songIndex;
+
+    public Playlist(Album album){
+        this.album = album;
+        this.songIndex=0;
+    }
+
+    public void play() {
+        Song song = album.AlbumSongs.get(0);
+        song.play();
+    }
+
+    public void next(){
+        if(songIndex == album.AlbumSongs.size() ){
+            songIndex = 0;
+        }
+        else{
+        songIndex = songIndex + 1;
+        }
+    }
+
+    public void previous(){
+        if(songIndex == 0 ){
+            songIndex = album.AlbumSongs.size() - 1;
+        }
+        else{
+        songIndex = songIndex - 1;
+        }
+    }
+
+    public void shuffle(){
+        songIndex = (int) (Math.random() * album.AlbumSongs.size());        
+    }
+
+}
