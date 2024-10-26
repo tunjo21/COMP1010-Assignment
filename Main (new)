@@ -42,24 +42,25 @@ public class Main {
         Album specificArtistAlbum = new Album("The Weeknd Album", artist7);
         specificArtistAlbum.GetSongsByArtist(song, "The Weeknd");
    
-        Album specificArtistAlbum2 = new Album("One Direction", artist5);
         specificArtistAlbum.GetSongsByArtist(song, "One Direction");
    
         Playlist soloPlaylist = new Playlist(soloAlbum);
         Playlist bandPlaylist = new Playlist(bandAlbum);
         Playlist specificArtistPlaylist = new Playlist(specificArtistAlbum);
-        Playlist specificArtistPlaylist2 = new Playlist(specificArtistAlbum2);
    
         int count = 0;
         Scanner scanner = new Scanner(System.in);
-
+        
+        System.out.println("Enter 1 for soloplaylist");
+        System.out.println("Enter 2 for bandplaylist");
+        System.out.println("Enter 3 for specificArtistplaylist1");
 
         System.out.print("Enter what playlist you want to play: ");
         int playlist = scanner.nextInt();
         int number = 0;
         System.out.println();
 
-            while (playlist > 4) {
+            while (playlist > 3) {
                 System.out.println("Searching...");
                 System.out.println();
                 System.out.println("Playlist not found.");
@@ -76,9 +77,6 @@ public class Main {
                 System.out.println("Playing Playlist " + playlist + "...");
             } 
             if (playlist == 3) {
-                System.out.println("Playing Playlist " + playlist + "...");
-            }
-            if (playlist == 4) {
                 System.out.println("Playing Playlist " + playlist + "...");
             }
 
@@ -98,10 +96,6 @@ public class Main {
                 specificArtistPlaylist.play();
             }
 
-            if (playlist == 4) {
-                specificArtistPlaylist2.play();
-            }
-
 
             while (number < 4) {
 
@@ -115,7 +109,7 @@ public class Main {
             number = scanner.nextInt();
             System.out.println();
 
-            while (number > 3) {
+            while (number > 4) {
                 System.out.println("Invalid input, try again.");
                 System.out.println();
                 System.out.print("Enter what you want to do: ");
@@ -142,8 +136,7 @@ public class Main {
 
                 if (count == 1) {
                     System.out.println("Resuming song...");
-                    System.out.print("Song playing: ");
-                    System.out.println(); // song name
+                    soloPlaylist.play();
                     System.out.println();
                     System.out.println("press 0 to play");
                     System.out.println("press 1 for prev");
@@ -175,34 +168,52 @@ public class Main {
                     specificArtistPlaylist.previous();
                     specificArtistPlaylist.play();
                 }
-
-                if (playlist == 4) {
-                    specificArtistPlaylist2.previous();
-                    specificArtistPlaylist2.play();
-                }
                 
             } 
 
 
             if (number == 2) {
                 System.out.println("Playing next song...");
-                soloPlaylist.next();
-                bandPlaylist.next();
-                specificArtistPlaylist.previous();
-                specificArtistPlaylist2.previous();
-                System.out.println();
-                soloPlaylist.play();
-                bandPlaylist.play();
-                specificArtistPlaylist.play();
-                specificArtistPlaylist2.play();
+                if (playlist == 1) {
+                    soloPlaylist.next();
+                    soloPlaylist.play();
+                }
+
+                if (playlist == 2) {
+                    bandPlaylist.next();
+                    bandPlaylist.play();
+                }
+
+                if (playlist == 3) {
+                    specificArtistPlaylist.next();
+                    specificArtistPlaylist.play();
+                }
+
+ 
             } 
 
 
             if (number == 3) {
-                System.out.println("Playing Playlist " + number + "...");
+                System.out.println("Shuffling...");
+                if (playlist == 1) {
+                    soloPlaylist.shuffle();
+                    soloPlaylist.play();
+                }
+
+                if (playlist == 2) {
+                    bandPlaylist.shuffle();
+                    bandPlaylist.play();
+                }
+
+                if (playlist == 3) {
+                    specificArtistPlaylist.shuffle();
+                    specificArtistPlaylist.play();
+                }
             }
 
         }
+
+        System.out.println("Exiting terminal...");
         scanner.close();
 }
 }
