@@ -8,7 +8,7 @@
 
 ## Project Overview
 
-The **Music Library Management** application is a Java-based program that allows users to manage their music playlists effectively. The application supports four distinct playlists: one for solo artist songs, one for band songs, another for songs by a specific artist, and a final playlist for songs by various artists. Users can play, pause, shuffle, and navigate through the playlists, enhancing their listening experience.
+The **Music Library Management** application is a Java-based program that allows users to manage their music playlists effectively. The application supports four distinct playlists: one for solo artist songs, one for band songs and another for songs by a specific artist Users can play, pause, shuffle, and navigate through the playlists, enhancing their listening experience.
 
 ---
 
