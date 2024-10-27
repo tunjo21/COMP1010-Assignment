@@ -138,8 +138,6 @@ When a playlist is playing, users will see the current song information along wi
      - "After Hours" by The Weeknd
      - "Die for You" by The Weeknd
 
-### Sample Playback Output:
-
 ---
 ## UML Diagrams
 
