@@ -5,6 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Initiates and store artist + songs into playlist
+
         Artist artist1 = new Artist("Daft Punk and The Weeknd",true);
         Artist artist2 = new Artist("Keshi",true);
         Artist artist3 = new Artist("Taylor Swift",true);
@@ -48,19 +50,27 @@ public class Main {
         Playlist soloPlaylist = new Playlist(soloAlbum);
         Playlist bandPlaylist = new Playlist(bandAlbum);
         Playlist specificArtistPlaylist = new Playlist(specificArtistAlbum);
-   
+        
+        //initiate variables
+
         int count = 0;
+        int number = 0;
         Scanner scanner = new Scanner(System.in);
         
+
+        //print out into terminal
         System.out.println("Enter 1 for soloplaylist");
         System.out.println("Enter 2 for bandplaylist");
         System.out.println("Enter 3 for specificArtistplaylist1");
         System.out.println();
         System.out.print("Enter what playlist you want to play: ");
+
+        //user interaction
         int playlist = scanner.nextInt();
-        int number = 0;
         System.out.println();
 
+
+        //loops until user press correct inputs  
         while (playlist > 3 || playlist < 1) {
             System.out.println("Searching...");
             System.out.println();
@@ -71,6 +81,7 @@ public class Main {
             System.out.println();
         }
 
+        //picks which playlist is playing
         if (playlist == 1) {
             System.out.println("Playing Playlist " + playlist + "...");
         } 
@@ -97,6 +108,8 @@ public class Main {
 
         System.out.println();
 
+        //loops until user presses 4
+
         while (number < 4) {
 
             System.out.println("press 0 to pause");
@@ -109,6 +122,8 @@ public class Main {
             number = scanner.nextInt();
             System.out.println();
 
+            //for invalid input
+
             while (number > 4 || number < 0) {
                 System.out.println("Invalid input, try again.");
                 System.out.println();
@@ -116,6 +131,8 @@ public class Main {
                 number = scanner.nextInt();
                 System.out.println();
             }
+
+            //for pause and play
 
             while (number == 0) {
                 if (count == 0) {
@@ -153,7 +170,7 @@ public class Main {
                 }
             }
 
-
+            //for prev song
             if (number == 1) {
                 System.out.println("Playing previous song...");
                 System.out.println();
@@ -175,7 +192,7 @@ public class Main {
                     
             } 
 
-
+            //for next song
             if (number == 2) {
                 System.out.println("Playing next song...");
                 System.out.println();
@@ -197,7 +214,7 @@ public class Main {
     
             } 
 
-
+            //to shuffle songs
             if (number == 3) {
                 System.out.println("Shuffling...");
                 System.out.println();
@@ -218,7 +235,7 @@ public class Main {
             }
 
         }
-
+    
     System.out.println("Exiting terminal...");
     System.out.println();
     scanner.close();
