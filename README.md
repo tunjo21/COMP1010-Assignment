@@ -26,7 +26,6 @@ The **Music Library Management** application offers the following features for u
   - **Solo Artist Playlist:** Contains songs from solo artists.
   - **Band Playlist:** Contains songs from bands.
   - **Artist Playlist:** Contains songs by a specific artist.
-  - **Various Artists Playlist:** Contains songs from various artists.
 
 ### 3. Music Playback Controls
 
