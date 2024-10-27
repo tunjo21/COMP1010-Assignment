@@ -30,13 +30,6 @@ The **Music Library Management** application offers the following features for u
   - **Artist Playlist:** Contains songs by a specific artist.
   - **Various Artists Playlist:** Contains songs from various artists.
 
-### 3. Instructions
-
-- **Select a Playlist**: Users can choose from the available playlists:
-   - Enter `1` for **Solo Artist Playlist**
-   - Enter `2` for **Band Playlist**
-   - Enter `3` for **Specific Artist Playlist**
-
 ### 3. Music Playback Controls
 
 - **Playback Features:**
@@ -52,15 +45,6 @@ When a playlist is playing, users will see the current song information along wi
 
 - **Current Song Playing**: Displays the name of the song, for example:  
   `Song playing: Starboy by Daft Punk and The Weeknd`
-  
-- **Playback Controls**:
-  - Press `0` to **Pause** the music.
-  - Press `1` for **Previous Song**.
-  - Press `2` for **Next Song**.
-  - Press `3` to **Shuffle** the playlist.
-  - Press `4` to **Exit** the application.
-
-Upon entering a number, the application will respond according to the selected action. If a user inputs a number outside the valid range (0-4), the application will display an **"Invalid input. Try again."** message, prompting the user to enter a valid option.
 
 ### 5. Output
 
@@ -76,16 +60,37 @@ Upon entering a number, the application will respond according to the selected a
 ## Non-Functional Requirements
 
 ### 1. Performance and Scalability
-
 - **Efficient Playback:**
-  - The application should handle multiple playlists and song navigation with minimal latency.
+  - The application must support multiple playlists and song navigation with minimal latency to ensure smooth user experience.
 
 ### 2. Documentation and Usability
-
 - **User Guide:**
-  - Comprehensive documentation on how to use the application features and playback controls.
+  - Provide comprehensive documentation detailing how to use the application features and playback controls effectively.
 
 ---
+
+## How to Run the Program
+
+### 1. Start the Application:
+   - Run the program using your IDE or command line.
+
+### 2. Select a Playlist:
+   - Press `1` for **Solo Artist Playlist**.
+   - Press `2` for **Band Playlist**.
+   - Press `3` for **Specific Artist Playlist**.
+
+### 3. Music Playback Controls:
+   - **Current Song Playing**: Displays the currently playing song.
+   - **Press the following buttons for playback control**:
+     - `0` to **Pause** the music.
+     - `1` for **Previous Song**.
+     - `2` for **Next Song**.
+     - `3` to **Shuffle** the playlist.
+     - `4` to **Exit** the application.
+
+### 4. Invalid Input:
+   - If you enter a number outside the valid range (0-4), the application will display **"Invalid input. Try again."**.
+
 
 ## Technical Specifications
 
@@ -109,7 +114,10 @@ Upon entering a number, the application will respond according to the selected a
 ### 4. Testing and Quality Assurance
 
 - **Unit Testing:**
-  - Test individual playback controls and playlist functionalities.
+  - Conduct tests for individual playback controls and ensure proper functionality of:
+    - **Playlists:** Verify that playlists can be created, modified, and navigated correctly.
+    - **Albums:** Ensure album information is accurately displayed and associated with the correct songs.
+    - **Artists:** Test that artist details are correctly linked to their songs and that functionalities like adding and removing songs work as expected.
 
 ---
 
