@@ -2,8 +2,6 @@
 
 # Music Library Management Project Overview
 
-## Project Specifications and Sample Output
-
 ---
 
 ## Project Overview
