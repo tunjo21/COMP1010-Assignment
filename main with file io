@@ -56,7 +56,7 @@ public class Main {
         Playlist bandPlaylist = new Playlist(bandAlbum);
         Playlist specificArtistPlaylist = new Playlist(specificArtistAlbum);
         
-        // file I/O
+        // file I/O - creating .txt file + writing text in file
         String input = "input.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(input))) {
@@ -135,6 +135,7 @@ public class Main {
 
         while (number < 4) {
 
+            // prints the text in file
             try (BufferedReader reader = new BufferedReader(new FileReader(input))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -184,7 +185,7 @@ public class Main {
                     System.out.println();
                     soloPlaylist.play();
                     System.out.println();
-                    
+
                     try (BufferedReader reader = new BufferedReader(new FileReader(input))) {
                         String line;
                         while ((line = reader.readLine()) != null) {
@@ -273,3 +274,4 @@ public class Main {
     scanner.close();
     }
 }
+
