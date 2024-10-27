@@ -12,12 +12,14 @@ The **Music Library Management** application is a Java-based program that allows
 
 ---
 
-## Functional Requirements
+## Functionality
+
+The **Music Library Management** application offers the following features for users:
 
 ### 1. Playlist Management
 
 - **Playlist Creation:**
-  - Users can create and manage up to **four playlists**.
+  - Users can manage up to **Three playlists**.
   - Each playlist can contain multiple songs.
 
 ### 2. Playlist Types
@@ -27,6 +29,13 @@ The **Music Library Management** application is a Java-based program that allows
   - **Band Playlist:** Contains songs from bands.
   - **Artist Playlist:** Contains songs by a specific artist.
   - **Various Artists Playlist:** Contains songs from various artists.
+
+### 3. Instructions
+
+- **Select a Playlist**: Users can choose from the available playlists:
+   - Enter `1` for **Solo Artist Playlist**
+   - Enter `2` for **Band Playlist**
+   - Enter `3` for **Specific Artist Playlist**
 
 ### 3. Music Playback Controls
 
@@ -39,10 +48,19 @@ The **Music Library Management** application is a Java-based program that allows
 
 ### 4. User Interaction
 
-- **Song Selection:**
-  - Users can select a specific playlist to play.
-  - Users can choose a song to play by its number in the playlist.
-  - Users can pause the song, go to next song, shuffle the playlist.
+When a playlist is playing, users will see the current song information along with available controls:
+
+- **Current Song Playing**: Displays the name of the song, for example:  
+  `Song playing: Starboy by Daft Punk and The Weeknd`
+  
+- **Playback Controls**:
+  - Press `0` to **Pause** the music.
+  - Press `1` for **Previous Song**.
+  - Press `2` for **Next Song**.
+  - Press `3` to **Shuffle** the playlist.
+  - Press `4` to **Exit** the application.
+
+Upon entering a number, the application will respond according to the selected action. If a user inputs a number outside the valid range (0-4), the application will display an **"Invalid input. Try again."** message, prompting the user to enter a valid option.
 
 ### 5. Output
 
