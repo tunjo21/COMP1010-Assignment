@@ -1,0 +1,59 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+public class SongTest {
+    private Song song;
+    private Artist artist;
+
+    @BeforeEach
+    void setUp() {
+        artist = new Artist("The Weeknd", true);
+        song = new Song("Blinding Lights", artist, "After Hours", 4 * 60 + 23); // 4:23
+    }
+
+    @Test
+    void testPlay() {
+        // Redirecting System.out to capture the output of play method
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        song.play();
+
+        // Assert
+        String expectedOutput = "Playing: Blinding Lights by The Weeknd\n";
+        assertEquals(expectedOutput, outputStream.toString());
+        
+        // Reset the standard output
+        System.setOut(System.out);
+    }
+
+    @Test
+    void testShowDetails() {
+        // Redirecting System.out to capture the output of showDetails method
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        song.showDetails();
+
+        // Prepare expected output
+        int minutes = song.lengthInSeconds / 60;
+        int seconds = song.lengthInSeconds % 60;
+        String expectedOutput = "Title: Blinding Lights\n" +
+                                "Artist: The Weeknd\n" +
+                                "Album: After Hours\n" +
+                                String.format("Length: %d:%02d\n", minutes, seconds);
+
+        // Assert
+        assertEquals(expectedOutput, outputStream.toString());
+
+        // Reset the standard output
+        System.setOut(System.out);
+    }
+}
