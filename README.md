@@ -79,7 +79,7 @@ When a playlist is playing, users will see the current song information along wi
 ### 3. Music Playback Controls:
    - **Current Song Playing**: Displays the currently playing song.
    - **Press the following buttons for playback control**:
-     - `0` to **Pause** the music.
+     - `0` to **Pause** or **Play** the music (toggles based on current playback state).
      - `1` for **Previous Song**.
      - `2` for **Next Song**.
      - `3` to **Shuffle** the playlist.
@@ -88,6 +88,7 @@ When a playlist is playing, users will see the current song information along wi
 ### 4. Invalid Input:
    - If you enter a number outside the valid range (0-4), the application will display **"Invalid input. Try again."**.
 
+---
 
 ## Technical Specifications
 
@@ -144,7 +145,7 @@ When a playlist is playing, users will see the current song information along wi
 
 ## Conclusion
 
-The **Music Library Management** application effectively combines functionality and user experience, allowing users to engage with their music in a structured yet enjoyable way. With four distinct playlists tailored to various music genres and artists, the application enhances the listening experience through essential playback controls. By enabling features such as play, pause, next, and shuffle, users can effortlessly navigate their music collection. Additionally, the static nature of the playlists ensures a consistent and reliable experience, allowing users to focus on enjoying their favorite tracks without the distraction of modifications. Overall, this project not only serves as a practical application of Java programming concepts but also provides an engaging platform for music enthusiasts to explore and enjoy their playlists.
+The **Music Library Management** application effectively combines functionality and user experience, allowing users to engage with their music in a structured yet enjoyable way. With three distinct playlists tailored to various music genres and artists, the application enhances the listening experience through essential playback controls. By enabling features such as play, pause, next, and shuffle, users can effortlessly navigate their music collection. Additionally, the static nature of the playlists ensures a consistent and reliable experience, allowing users to focus on enjoying their favorite tracks without the distraction of modifications. Overall, this project not only serves as a practical application of Java programming concepts but also provides an engaging platform for music enthusiasts to explore and enjoy their playlists.
 
 ---
 
