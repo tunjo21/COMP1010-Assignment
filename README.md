@@ -149,4 +149,23 @@ When a playlist is playing, users will see the current song information along wi
 
 The **Music Library Management** application effectively combines functionality and user experience, allowing users to engage with their music in a structured yet enjoyable way. With four distinct playlists tailored to various music genres and artists, the application enhances the listening experience through essential playback controls. By enabling features such as play, pause, next, and shuffle, users can effortlessly navigate their music collection. Additionally, the static nature of the playlists ensures a consistent and reliable experience, allowing users to focus on enjoying their favorite tracks without the distraction of modifications. Overall, this project not only serves as a practical application of Java programming concepts but also provides an engaging platform for music enthusiasts to explore and enjoy their playlists.
 
+---
 
+## Team Contributions
+
+### Tasmia Tunjomony(48364304)
+- Developed the **Song Class**, managing song attributes such as title, artist, album, and duration.
+- Implemented methods for displaying song details and controlling playback.
+
+### Gayathri Binu Sreeja
+- Created the **Playlist Class**, responsible for managing different playlists and handling song additions and removals.
+- Designed the logic for navigating through playlists and managing playback order.
+
+### Joy Xu
+- Designed the **Artist Class**, encapsulating artist information and maintaining a list of songs associated with each artist.
+- Assisted in ensuring seamless integration of the Artist class with the Song and Playlist classes.
+
+### Collaborative Work
+- Collaboratively focused on the **Main.java** file to integrate all components and ensure smooth interaction between the classes.
+- Identified the need for the **Album Class** to manage album-related functionalities and collectively worked on its implementation.
+- Conducted **JUnit Testing** together to ensure the reliability and functionality of each class and its methods, verifying that all components work as intended.
