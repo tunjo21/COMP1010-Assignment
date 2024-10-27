@@ -1,0 +1,54 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+import java.util.ArrayList;
+
+public class AlbumTest {
+
+    @Test
+    public void testSoloList() {
+        // Create sample artists
+        Artist artist1 = new Artist("Daft Punk and The Weeknd", true); // Solo artist
+        Artist artist2 = new Artist("Keshi", true); // Solo artist
+        Artist artist5 = new Artist("One Direction", false); // Band artist
+        Artist artist7 = new Artist("The Weeknd", true); // Solo artist
+
+        // Create sample songs
+        ArrayList<Song> songs = new ArrayList<>();
+        songs.add(new Song("Starboy", artist1, "Starboy", 3 * 60 + 50));
+        songs.add(new Song("Say", artist2, "REQUIEM", 3 * 60 + 2));
+        songs.add(new Song("Night Changes", artist5, "Four", 3 * 60 + 52));
+        songs.add(new Song("Blinding Lights", artist7, "After Hours", 4 * 60 + 23));
+
+        // Create album and add solo songs
+        Album soloAlbum = new Album("Solo Artists Album", null);
+        soloAlbum.SoloList(songs);
+
+        // Verify the result
+        assertEquals(3, soloAlbum.AlbumSongs.size()); // Expecting 3 solo songs
+        assertTrue(soloAlbum.AlbumSongs.contains(songs.get(0))); // "Starboy" should be included
+        assertTrue(soloAlbum.AlbumSongs.contains(songs.get(1))); // "Say" should be included
+        assertFalse(soloAlbum.AlbumSongs.contains(songs.get(2))); // "Night Changes" should not be included
+        assertTrue(soloAlbum.AlbumSongs.contains(songs.get(3))); // "Blinding Lights" should be included
+    }
+
+    @Test
+    public void testBandList() {
+        // Create sample artists (same as before)
+        Artist artist5 = new Artist("One Direction", false); // Band artist
+        Artist artist7 = new Artist("The Weeknd", true); // Solo artist
+
+        // Create sample songs
+        ArrayList<Song> songs = new ArrayList<>();
+        songs.add(new Song("Night Changes", artist5, "Four", 3 * 60 + 52));
+        songs.add(new Song("Blinding Lights", artist7, "After Hours", 4 * 60 + 23));
+
+        // Create album and add band songs
+        Album bandAlbum = new Album("Band Artists Album", null);
+        bandAlbum.BandList(songs);
+
+        // Verify the result
+        assertEquals(1, bandAlbum.AlbumSongs.size()); // Expecting 1 band song
+        assertTrue(bandAlbum.AlbumSongs.contains(songs.get(0))); // "Night Changes" should be included
+        assertFalse(bandAlbum.AlbumSongs.contains(songs.get(1))); // "Blinding Lights" should not be included
+    }
+}
