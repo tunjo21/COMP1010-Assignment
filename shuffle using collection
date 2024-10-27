@@ -1,0 +1,39 @@
+import java.util.Collections;
+import java.util.List;
+
+public class Playlist {
+    public Album album;
+    public int songIndex;
+
+    public Playlist(Album album) {
+        this.album = album;
+        this.songIndex = 0;
+    }
+
+    public void play() {
+        Song song = album.AlbumSongs.get(songIndex);
+        song.play();
+    }
+
+    public void next() {
+        if (songIndex == album.AlbumSongs.size() - 1) {
+            songIndex = 0;
+        } else {
+            songIndex = songIndex + 1;
+        }
+    }
+
+    public void previous() {
+        if (songIndex == 0) {
+            songIndex = album.AlbumSongs.size() - 1;
+        } else {
+            songIndex = songIndex - 1;
+        }
+    }
+
+    public void shuffle() {
+        List<Song> songs = album.AlbumSongs; // Get the list of songs
+        Collections.shuffle(songs); // Shuffle the list
+        songIndex = 0; // Reset songIndex to the start of the shuffled playlist
+    }
+}
