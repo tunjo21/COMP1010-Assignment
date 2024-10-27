@@ -52,9 +52,22 @@ public class PlaylistTest {
 
     @Test
     public void testShuffle() {
-        int initialIndex = playlist.songIndex;
+        // Store the original order of songs
+        ArrayList<Song> originalOrder = new ArrayList<>(album.AlbumSongs);
+
+        // Shuffle the playlist
         playlist.shuffle();
-        // Check if the index changed after shuffle
-        assertNotEquals(initialIndex, playlist.songIndex);
+
+        // Retrieve the shuffled songs
+        ArrayList<Song> shuffledOrder = album.AlbumSongs;
+
+        // Check that the order has changed
+        assertNotEquals(originalOrder, shuffledOrder);
+
+        // Check that all songs are still present
+        assertEquals(originalOrder.size(), shuffledOrder.size());
+        for (Song song : originalOrder) {
+            assertTrue(shuffledOrder.contains(song));
+        }
     }
 }
