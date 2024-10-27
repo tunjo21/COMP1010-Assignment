@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Playlist {
+    public Album album;
+    public int songIndex;
+
+    public Playlist(Album album) {
+        this.album = album;
+        this.songIndex = 0;
+    }
+
+    public void play() {
+        Song song = album.AlbumSongs.get(songIndex);
+        song.play();
+    }
+
+    public void next() {
+        if (songIndex == album.AlbumSongs.size() - 1) {
+            songIndex = 0;
+        } else {
+            songIndex = songIndex + 1;
+        }
+    }
+
+    public void previous() {
+        if (songIndex == 0) {
+            songIndex = album.AlbumSongs.size() - 1;
+        } else {
+            songIndex = songIndex - 1;
+        }
+    }
+
+    public void shuffle() { // Method shuffles the songs using Fisher-Yates algorithm
+        ArrayList<Song> songs = album.AlbumSongs; // Get the list of songs
+        Random random = new Random(); // Create a Random object for shuffling
+    
+        // Fisher-Yates shuffle algorithm
+        for (int i = songs.size() - 1; i > 0; i--) {
+            // Generate a random index between 0 and i
+            int j = random.nextInt(i + 1);
+            
+            // Swap songs at indices i and j
+            Song temp = songs.get(i);
+            songs.set(i, songs.get(j));
+            songs.set(j, temp);
+        }
+    
+        songIndex = 0; // Reset the index to the first song in the shuffled list
+    }
+}
