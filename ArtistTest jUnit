@@ -13,21 +13,20 @@ public class ArtistTest {
         Artist artist = new Artist("Artist Name", true);
         String song = "My First Song";
 
-        // Act
         artist.addSong(song);
 
-        // Assert
-        assertEquals(1, artist.Songs.size()); // Check that one song is added
-        assertEquals(song, artist.Songs.get(0)); // Check that the song added is correct
+        assertEquals(1, artist.Songs.size()); // should have one song added in arraylist
+        assertEquals(song, artist.Songs.get(0)); // song should same as the song added
 
         //Multiple add
         String song2 = "second song";
         String song3 = "third song";
-        artist.addSong(song2);
-        artist.addSong(song3);
+
+        artist.addSong(song2); 
+        artist.addSong(song3); 
         
-        assertEquals(song2, artist.Songs.get(1));
-        assertEquals(song3, artist.Songs.get(2));
+        assertEquals(song2, artist.Songs.get(1)); //song2 should be after song
+        assertEquals(song3, artist.Songs.get(2)); //song3 should be after song2
 
     }
 
@@ -36,11 +35,9 @@ public class ArtistTest {
         Artist soloArtist = new Artist("Solo artist name", true);
         Artist bandArtist = new Artist("Band name", false);
 
-        // Act
         String type = soloArtist.artistType();
         String type2 = bandArtist.artistType();
 
-        // Assert
         assertEquals("Solo Artist", type); // should return "Solo Artist"
         assertEquals("Band", type2); // should return "Band"
         
@@ -51,25 +48,20 @@ public class ArtistTest {
         String expectedName = "Artist Name";
         Artist artist = new Artist(expectedName, true);
 
-        // Act
         String actualName = artist.getName();
 
-        // Assert
-        assertEquals(expectedName, actualName); // Verify that the name returned is correct
+        assertEquals(expectedName, actualName); // name should be the same
     }
     
 
     @Test
     void testIsSolo() {
-         // Arrange
          Artist soloArtist = new Artist("solo artist name", true);
          Artist bandArtist = new Artist("band artist name", false);
         
-         // Act
          boolean result = soloArtist.isSolo();
          boolean result2 = bandArtist.isSolo();
  
-         // Assert
          assertTrue(result); //should return true for solo artist
          assertFalse(result2); //should return false for band artist
 
