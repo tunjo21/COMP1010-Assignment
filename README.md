@@ -132,6 +132,10 @@ Upon entering a number, the application will respond according to the selected a
 
 ### Sample Playback Output:
 
+---
+## UML Diagrams
+
+![9c8cca69](https://github.com/user-attachments/assets/6621d9fe-dd7c-4497-84bb-ab20be1c879f)
 
 ---
 
