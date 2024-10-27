@@ -1,0 +1,43 @@
+import java.util.Random;
+
+public class Playlist {
+    public Album album;
+    public int songIndex;
+    private Random random; // Add a Random instance to avoid creating a new one every time
+
+    public Playlist(Album album) {
+        this.album = album;
+        this.songIndex = 0;
+        this.random = new Random(); // Initialize Random once
+    }
+
+    public void play() {
+        Song song = album.AlbumSongs.get(songIndex);
+        song.play();
+    }
+
+    public void next() {
+        if (songIndex == album.AlbumSongs.size() - 1) {
+            songIndex = 0;
+        } else {
+            songIndex = songIndex + 1;
+        }
+    }
+
+    public void previous() {
+        if (songIndex == 0) {
+            songIndex = album.AlbumSongs.size() - 1;
+        } else {
+            songIndex = songIndex - 1;
+        }
+    }
+
+    public void shuffle() {
+        int newIndex;
+        do {
+            newIndex = random.nextInt(album.AlbumSongs.size());
+        } while (newIndex == songIndex); // Ensure the new index is different
+
+        songIndex = newIndex; // Update to the new index after confirming it's different
+    }
+}
