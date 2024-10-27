@@ -57,7 +57,7 @@ public class Main {
         Playlist specificArtistPlaylist = new Playlist(specificArtistAlbum);
         
         // file I/O - creating .txt file + writing text in file
-        String input = "input.txt";
+        String input = "input.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(input))) {
             writer.write("press 0 to pause");
