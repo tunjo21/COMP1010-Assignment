@@ -153,15 +153,15 @@ The **Music Library Management** application effectively combines functionality 
 
 ## Team Contributions
 
-### Tasmia Tunjomony(48364304)
+### Tasmia Tunjomony (48364304)
 - Developed the **Song Class**, managing song attributes such as title, artist, album, and duration.
 - Implemented methods for displaying song details and controlling playback.
 
-### Gayathri Binu Sreeja
+### Gayathri Binu Sreeja (48409510)
 - Created the **Playlist Class**, responsible for managing different playlists and handling song additions and removals.
 - Designed the logic for navigating through playlists and managing playback order.
 
-### Joy Xu
+### Joy Xu (48501212)
 - Designed the **Artist Class**, encapsulating artist information and maintaining a list of songs associated with each artist.
 - Assisted in ensuring seamless integration of the Artist class with the Song and Playlist classes.
 
