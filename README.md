@@ -69,7 +69,7 @@ When a playlist is playing, users will see the current song information along wi
 ## How to Run the Program
 
 ### 1. Start the Application:
-   - Run Main.java using your IDE or command line.
+   - Run the program using your IDE or command line.
 
 ### 2. Select a Playlist:
    - Press `1` for **Solo Artist Playlist**.
