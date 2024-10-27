@@ -125,14 +125,10 @@ Upon entering a number, the application will respond according to the selected a
    - **Songs:**
      - "18" by One Direction
      - "You & I" by Oasis
-3. **Artist Playlist:**
+3. **Specefic Artist Playlist:**
    - **Songs:**
      - "After Hours" by The Weeknd
      - "Die for You" by The Weeknd
-4. **Various Artists Playlist:**
-   - **Songs:**
-     - "Daylight" by Taylor Swift
-     - "Double Take" by Dhruv
 
 ### Sample Playback Output:
 
