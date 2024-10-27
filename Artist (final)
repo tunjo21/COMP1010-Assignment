@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+
+public class Artist {
+    public String name; //artist name
+    public ArrayList<String> Songs;  // list of songs
+    public Boolean isSoloArtist;  // solo (T) or band (F)   
+
+    //constructor
+    public Artist(String name, boolean isSoloArtist) {
+        this.name = name; 
+        this.isSoloArtist = isSoloArtist; 
+        this.Songs = new ArrayList<>(); 
+     }
+
+
+    //gets artist name
+    public String getName() {
+        return name;
+    }
+
+    //stores song into arraylist
+    public void addSong(String song) {
+        Songs.add(song);
+    }
+
+    //returns whether artist is a solo artist is true or false
+    public boolean isSolo() {
+        return isSoloArtist;
+    }
+
+    //returns whether artist is a solo artist or band
+    public String artistType() {
+        String artistType;
+        if (isSoloArtist) {
+            artistType = "Solo Artist";
+        } else {
+            artistType = "Band";
+        }
+
+        return artistType;
+
+    }
+
+}
